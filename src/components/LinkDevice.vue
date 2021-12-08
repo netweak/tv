@@ -70,13 +70,13 @@ export default {
   },
   methods: {
     getCode() {
-      axios.get('https://netweak.com.test/api/link/register', {params: {device: 'Netweak for TV'}})
+      axios.get('https://api.netweak.com/link/register', {params: {device: 'Netweak for TV'}})
         .then(response => {
           this.code = response.data.code;
           this.key = response.data.key;
 
           this.interval = setInterval(() => {
-            axios.get('https://netweak.com.test/api/link/token', {params: {code: this.code, key: this.key}})
+            axios.get('https://api.netweak.com/link/token', {params: {code: this.code, key: this.key}})
               .then(response => {
                 this.token = response.data.token;
                 this.$emit('tokenFetched', this.token);
