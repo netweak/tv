@@ -28,7 +28,7 @@ export default {
     }
   },
   mounted() {
-    axios.get('https://netweak.com.test/api/servers', {headers: {Authorization: `Bearer ${this.token}`}})
+    axios.get('https://api.netweak.com/servers', {headers: {Authorization: `Bearer ${this.token}`}})
       .then(response => {
         this.loading = false;
         this.servers = response.data.data;
