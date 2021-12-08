@@ -26,7 +26,7 @@ export default {
   },
   mounted() {
     if (this.token !== null) {
-      axios.get('https://netweak.com.test/api/hello', {headers: {Authorization: `Bearer ${this.token}`}})
+      axios.get('https://api.netweak.com/hello', {headers: {Authorization: `Bearer ${this.token}`}})
         .then(response => console.log(response.data))
         .catch(() => {
           //localStorage.clear();
